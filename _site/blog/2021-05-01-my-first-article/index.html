@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My First Article</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-    <header class="page-header">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My First Article</title>
+        <script defer src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <header class="page-header">
   <div class="container">
     <div class="page-header__content">
       <div>
@@ -31,9 +32,8 @@
   </div>
 </header>
 
-
-    <main>
-    
+        <main>
+            
 
 <article class="main-article">
 <div class="container container--narrow flow">
@@ -60,9 +60,8 @@
 </article>
 
 
-</main>
-    
-    <footer class="site-footer">
+        </main>
+        <footer class="site-footer">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 114 26.6" class="logo" width="8rem" fill="var(--logo-color, #000)">
     <path d="M32.4 8.1h2.9v11.7h-2.9V8.1zm4 7.3c0-2.9 1.8-4.6 4.5-4.6s4.5 1.7 4.5 4.6-1.7 4.7-4.5 4.7-4.5-1.7-4.5-4.7zm6.2
     0c0-1.6-.6-2.5-1.6-2.5s-1.6.9-1.6 2.5.6 2.5 1.6 2.5 1.6-.8 1.6-2.5zm4 5h2.8c.3.6.9 1 1.6.9 1.1 0 1.7-.6 1.7-1.5v-1.6c-.5
@@ -83,5 +82,17 @@
   </svg>
   <p>© 2020 Crappy Productins. All rights reserved.</p>
 </footer>
-</body>
+        
+        <script>
+            if (window.netlifyIdentity) {
+                window.netlifyIdentity.on("init", user => {
+                    if (!user) {
+                        window.netlifyIdentity.on("login", () => {
+                            document.location.href = "/admin/";
+                        });
+                    }
+                });
+            }
+        </script>
+    </body>
 </html>
